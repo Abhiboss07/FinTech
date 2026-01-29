@@ -3,15 +3,15 @@
     "title":"SDE Backend Developer - Fresher",
     "company":"Paytm",
     "location":"Bangalore",
-    "description":"We are hiring fresh SDE Backend developers for our payment platform. Looking for graduates with strong programming skills. PPO available for top performers.",
+    "description":"We are hiring fresh SDE Backend developers for our payment platform. Looking for graduates with strong programming skills.",
     "apply_link":"https:\/\/jobs.paytm.com\/jobs\/sde-backend-fresher",
     "hr_emails":"careers@paytm.com",
-    "hr_phones":"+91-9876543210",
+    "hr_phones":"",
     "direct_apply_link":"https:\/\/jobs.paytm.com\/apply\/sde-backend-fresher",
     "email_verified":true,
     "apply_method":"email",
     "source":"company_career",
-    "scraped_at":"2026-01-29T23:07:14.816835"
+    "scraped_at":"2026-01-29T23:06:51.133966"
   },
   {
     "title":"Backend Developer - PPO",
@@ -25,13 +25,13 @@
     "email_verified":true,
     "apply_method":"both",
     "source":"company_career",
-    "scraped_at":"2026-01-29T23:07:14.816835"
+    "scraped_at":"2026-01-29T23:06:51.133966"
   },
   {
     "title":"Software Engineer Backend - Entry Level",
     "company":"Razorpay",
     "location":"Mumbai",
-    "description":"Looking for entry level backend engineers to join our payment gateway team. Recent graduates welcome.",
+    "description":"Looking for entry level backend engineers to join our payment gateway team.",
     "apply_link":"https:\/\/razorpay.com\/jobs\/backend-engineer",
     "hr_emails":"",
     "hr_phones":"",
@@ -39,6 +39,6 @@
     "email_verified":false,
     "apply_method":"portal",
     "source":"company_career",
-    "scraped_at":"2026-01-29T23:07:14.816835"
+    "scraped_at":"2026-01-29T23:06:51.133966"
   }
 ]
