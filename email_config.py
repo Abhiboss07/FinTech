@@ -4,23 +4,23 @@ Update your personal information here
 """
 
 # Gmail Configuration
-GMAIL_USER = "your.email@gmail.com"  # UPDATE WITH YOUR GMAIL
+GMAIL_USER = "abhicps19@gmail.com"  # UPDATE WITH YOUR GMAIL
 APP_PASSWORD = "joew lgfh xoev jhpd"  # Your app password
 
 # Personal Information
 PERSONAL_INFO = {
-    'name': 'Your Name',  # UPDATE: Your full name
-    'phone': '+91-9876543210',  # UPDATE: Your phone number
+    'name': 'Abhishek Yadav',  # UPDATE: Your full name
+    'phone': '+91-9580818926',  # UPDATE: Your phone number
     'education': 'Bachelor of Technology in Computer Science',
-    'college': 'Your College Name',  # UPDATE: Your college name
+    'college': 'Veer Bahadur Singh Purvanchal University',  # UPDATE: Your college name
     'graduation_year': '2024',  # UPDATE: Your graduation year
     'skills': [
         'Python', 'Java', 'JavaScript', 'React', 'Node.js', 
         'SQL', 'MongoDB', 'Git', 'Docker', 'REST APIs'
     ],  # UPDATE: Your technical skills
-    'github': 'https://github.com/yourusername',  # UPDATE: Your GitHub profile
-    'linkedin': 'https://linkedin.com/in/yourprofile',  # UPDATE: Your LinkedIn profile
-    'portfolio': 'https://yourportfolio.com'  # UPDATE: Your portfolio website
+    'github': 'https://github.com/Abhiboss07',  # UPDATE: Your GitHub profile
+    'linkedin': 'https://www.linkedin.com/in/abhishek-yadav-4738032b7/',  # UPDATE: Your LinkedIn profile
+    'portfolio': 'https://portfolio-abhishek-01.vercel.app/'  # UPDATE: Your portfolio website
 }
 
 # Resume Configuration
