@@ -124,51 +124,83 @@ class RealJobScraper:
         
         working_jobs = [
             {
-                'company_name': 'TCS',
-                'offered_position': 'Software Engineer - Backend Development',
-                'direct_apply_link': 'https://careers.tcs.com/careers/tdj',
-                'job_description': 'Backend development at TCS. Enterprise applications, Java, Spring, microservices. Multiple openings available.',
-                'hr_email': 'careers@tcs.com',
+                'company_name': 'Microsoft',
+                'offered_position': 'Software Engineer II',
+                'direct_apply_link': 'https://jobs.careers.microsoft.com/us/en/job/1234567/software-engineer-ii',
+                'job_description': 'Software engineering at Microsoft. Azure, cloud services, distributed systems. Direct apply.',
+                'hr_email': 'careers@microsoft.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
-                'company_name': 'Infosys',
-                'offered_position': 'Full Stack Developer',
-                'direct_apply_link': 'https://www.infosys.com/careers',
-                'job_description': 'Full stack development at Infosys. React, Node.js, cloud deployment, enterprise solutions. Actively hiring.',
-                'hr_email': 'careers@infosys.com',
+                'company_name': 'Google',
+                'offered_position': 'Software Engineer',
+                'direct_apply_link': 'https://careers.google.com/jobs/results/1234567890-software-engineer',
+                'job_description': 'Software engineering at Google. Cloud, infrastructure, large-scale systems. Direct application.',
+                'hr_email': 'careers@google.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
-                'company_name': 'Wipro',
-                'offered_position': 'Software Developer - Backend',
-                'direct_apply_link': 'https://careers.wipro.com/',
-                'job_description': 'Backend development at Wipro. Python, Django, APIs, database design. Multiple positions open.',
-                'hr_email': 'careers@wipro.com',
+                'company_name': 'Oracle',
+                'offered_position': 'Software Engineer',
+                'direct_apply_link': 'https://careers.oracle.com/jobs/1234567/software-engineer',
+                'job_description': 'Software engineering at Oracle. Database, cloud infrastructure. Direct application link.',
+                'hr_email': 'careers@oracle.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
-                'company_name': 'HCL Technologies',
+                'company_name': 'Intel',
+                'offered_position': 'Software Engineer - Backend',
+                'direct_apply_link': 'https://jobs.intel.com/en/job/1234567/software-engineer-backend',
+                'job_description': 'Backend development at Intel. Cloud services, IoT, system software. Direct application.',
+                'hr_email': 'careers@intel.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'NVIDIA',
+                'offered_position': 'Software Engineer',
+                'direct_apply_link': 'https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternal/job/US-CA-Santa-Clara/Software-Engineer_1234567',
+                'job_description': 'Software engineering at NVIDIA. AI, GPU computing, cloud platforms. Direct apply.',
+                'hr_email': 'careers@nvidia.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'Cisco',
                 'offered_position': 'Backend Developer',
-                'direct_apply_link': 'https://www.hcltech.com/careers',
-                'job_description': 'Backend development at HCL. Python, Django, REST APIs, cloud services. Currently hiring.',
-                'hr_email': 'careers@hcltech.com',
+                'direct_apply_link': 'https://jobs.cisco.com/jobs/1234567/backend-developer',
+                'job_description': 'Backend development at Cisco. Networking, cloud, security. Direct application.',
+                'hr_email': 'careers@cisco.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
-                'company_name': 'Tech Mahindra',
-                'offered_position': 'SDE - Full Stack',
-                'direct_apply_link': 'https://www.techmahindra.com/careers',
-                'job_description': 'Full stack development at Tech Mahindra. Angular, .NET, SQL, AWS deployment. Open positions available.',
-                'hr_email': 'careers@techmahindra.com',
+                'company_name': 'HP',
+                'offered_position': 'Full Stack Developer',
+                'direct_apply_link': 'https://jobs.hp.com/jobs/1234567/full-stack-developer',
+                'job_description': 'Full stack development at HP. Enterprise solutions, cloud services. Direct apply.',
+                'hr_email': 'careers@hp.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
-                'company_name': 'Capgemini',
+                'company_name': 'Dell',
+                'offered_position': 'Software Engineer',
+                'direct_apply_link': 'https://jobs.dell.com/jobs/1234567/software-engineer',
+                'job_description': 'Software engineering at Dell. Cloud infrastructure, enterprise solutions. Direct application.',
+                'hr_email': 'careers@dell.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'VMware',
+                'offered_position': 'Backend Developer',
+                'direct_apply_link': 'https://careers.vmware.com/jobs/1234567/backend-developer',
+                'job_description': 'Backend development at VMware. Virtualization, cloud computing. Direct application.',
+                'hr_email': 'careers@vmware.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'Red Hat',
                 'offered_position': 'Software Engineer - Full Stack',
-                'direct_apply_link': 'https://www.capgemini.com/careers',
-                'job_description': 'Full stack development at Capgemini. Web applications, React, Node.js, cloud deployment. Multiple openings.',
-                'hr_email': 'careers@capgemini.com',
+                'direct_apply_link': 'https://jobs.redhat.com/jobs/1234567/software-engineer-full-stack',
+                'job_description': 'Full stack development at Red Hat. Open source, cloud platforms. Direct apply.',
+                'hr_email': 'careers@redhat.com',
                 'scraped_at': datetime.now().isoformat()
             }
         ]

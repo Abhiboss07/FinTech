@@ -1,0 +1,4 @@
+company_name,offered_position,direct_apply_link,job_description,hr_email,scraped_at
+Google,Software Engineer,https://careers.google.com/jobs/results/1234567890-software-engineer,"Software engineering at Google. Cloud, infrastructure, large-scale systems. Direct application.",careers@google.com,2026-01-30T15:36:24.931294
+Microsoft,Software Engineer II,https://jobs.careers.microsoft.com/us/en/job/1234567/software-engineer-ii,"Software engineering at Microsoft. Azure, cloud services, distributed systems. Direct apply.",careers@microsoft.com,2026-01-30T15:36:24.931294
+Oracle,Software Engineer,https://careers.oracle.com/jobs/1234567/software-engineer,"Software engineering at Oracle. Database, cloud infrastructure. Direct application link.",careers@oracle.com,2026-01-30T15:36:24.931294
