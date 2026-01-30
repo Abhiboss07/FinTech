@@ -12,13 +12,6 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import json
-from reportlab.lib.pagesizes import letter, A4
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.units import inch
-from reportlab.lib import colors
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
 import os
 
 class OptimizedFintechScraper:
@@ -283,95 +276,6 @@ class OptimizedFintechScraper:
         
         return df
 
-    def generate_pdf_report(self, csv_filename="optimized_fintech_jobs.csv", pdf_filename="fintech_jobs_report.pdf"):
-        """Generate PDF report from CSV data"""
-        print("📄 Generating PDF report...")
-        
-        # Read CSV data
-        try:
-            df = pd.read_csv(csv_filename)
-        except FileNotFoundError:
-            print("❌ CSV file not found. Please run the scraper first.")
-            return
-        
-        # Create PDF document
-        doc = SimpleDocTemplate(pdf_filename, pagesize=A4)
-        story = []
-        styles = getSampleStyleSheet()
-        
-        # Custom styles
-        title_style = ParagraphStyle(
-            'CustomTitle',
-            parent=styles['Heading1'],
-            fontSize=24,
-            spaceAfter=30,
-            textColor=colors.darkblue,
-            alignment=1  # Center
-        )
-        
-        heading_style = ParagraphStyle(
-            'CustomHeading',
-            parent=styles['Heading2'],
-            fontSize=16,
-            spaceAfter=12,
-            textColor=colors.darkblue
-        )
-        
-        # Title
-        story.append(Paragraph("Fintech Jobs Report", title_style))
-        story.append(Spacer(1, 20))
-        
-        # Summary
-        story.append(Paragraph(f"Total Jobs: {len(df)}", heading_style))
-        story.append(Paragraph(f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['Normal']))
-        story.append(Spacer(1, 20))
-        
-        # Jobs table
-        table_data = [['Company Name', 'Position', 'Apply Link', 'Description']]
-        
-        for _, row in df.iterrows():
-            company = row['company_name']
-            position = row['offered_position'][:50] + "..." if len(row['offered_position']) > 50 else row['offered_position']
-            apply_link = row['direct_apply_link'][:40] + "..." if len(row['direct_apply_link']) > 40 else row['direct_apply_link']
-            description = row['job_description'][:80] + "..." if len(row['job_description']) > 80 else row['job_description']
-            
-            table_data.append([company, position, apply_link, description])
-        
-        # Create table
-        table = Table(table_data, colWidths=[2*inch, 2*inch, 2*inch, 2.5*inch])
-        table.setStyle(TableStyle([
-            ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-            ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
-            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-            ('FONTSIZE', (0, 0), (-1, 0), 12),
-            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-            ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-            ('GRID', (0, 0), (-1, -1), 1, colors.black),
-            ('FONTSIZE', (0, 1), (-1, -1), 8),
-            ('VALIGN', (0, 0), (-1, -1), 'TOP'),
-        ]))
-        
-        story.append(table)
-        story.append(Spacer(1, 20))
-        
-        # Detailed job information
-        story.append(Paragraph("Detailed Job Information", heading_style))
-        story.append(Spacer(1, 12))
-        
-        for _, row in df.iterrows():
-            story.append(Paragraph(f"<b>Company:</b> {row['company_name']}", styles['Normal']))
-            story.append(Paragraph(f"<b>Details:</b> {row['company_details']}", styles['Normal']))
-            story.append(Paragraph(f"<b>Position:</b> {row['offered_position']}", styles['Normal']))
-            story.append(Paragraph(f"<b>Apply Link:</b> {row['direct_apply_link']}", styles['Normal']))
-            story.append(Paragraph(f"<b>Description:</b> {row['job_description']}", styles['Normal']))
-            story.append(Paragraph(f"<b>HR Email:</b> {row['hr_email']}", styles['Normal']))
-            story.append(Spacer(1, 12))
-        
-        # Build PDF
-        doc.build(story)
-        print(f"✅ PDF report generated: {pdf_filename}")
-
     def run_optimized_scraper(self):
         """Main optimized scraper function"""
         print("🚀 Starting Optimized Fintech Job Scraper...")
@@ -388,15 +292,13 @@ class OptimizedFintechScraper:
         # Save optimized data
         df = self.save_optimized_data()
         
-        # Generate PDF report
-        self.generate_pdf_report()
-        
         # Show summary
         print(f"\n✅ Optimized scraping completed!")
         print(f"📊 Found {len(df)} unique job positions")
-        print(f"📄 Generated optimized CSV and PDF reports")
+        print(f"📄 Generated optimized CSV data")
         print(f"🔗 All positions include direct apply links")
         print(f"📧 HR emails included for direct applications")
+        print(f"\n💡 Use 'python display_jobs.py' to view formatted table")
 
 if __name__ == "__main__":
     scraper = OptimizedFintechScraper()

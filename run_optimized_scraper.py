@@ -17,12 +17,12 @@ def main():
     print("• Detailed job descriptions")
     print("• HR emails for direct contact")
     print("• No duplicate positions")
-    print("• PDF report generation")
+    print("• Clean CSV data output")
     print("\n📊 Results:")
     print("• 6 premium fintech companies")
     print("• 100% unique positions")
     print("• Functional apply links")
-    print("• Professional PDF reports")
+    print("• Formatted display available")
     print("\n" + "=" * 60)
     
     # Run optimized scraper
@@ -32,8 +32,7 @@ def main():
     # Show output files
     print("\n📁 OUTPUT FILES:")
     output_files = [
-        "optimized_fintech_jobs.csv",
-        "fintech_jobs_report.pdf"
+        "optimized_fintech_jobs.csv"
     ]
     
     for filename in output_files:
@@ -44,7 +43,7 @@ def main():
     print("\n🎉 Ready for job applications!")
     print("📧 Use the HR emails to apply directly")
     print("🔗 Or apply through the provided direct links")
-    print("📄 Check the PDF report for formatted view")
+    print("� Run 'python display_jobs.py' for formatted table view")
 
 if __name__ == "__main__":
     main()
