@@ -125,83 +125,83 @@ class RealJobScraper:
         
         fresh_jobs = [
             {
-                'company_name': 'Paytm',
-                'offered_position': 'SDE - Backend Development',
-                'direct_apply_link': 'https://jobs.paytm.com/careers/job/apply?jobId=PAYTM-BACKEND-2025-001&step=1',
-                'job_description': 'Backend development at Paytm. Payment systems, APIs, microservices. Work from home available. PPO up to 10 LPA.',
-                'hr_email': 'careers@paytm.com',
-                'scraped_at': datetime.now().isoformat()
-            },
-            {
-                'company_name': 'PhonePe',
-                'offered_position': 'Software Engineer - Full Stack',
-                'direct_apply_link': 'https://phonepe.com/careers/job/apply?jid=PHONEPE-FULLSTACK-2025-002&step=apply',
-                'job_description': 'Full stack development at PhonePe. UPI apps, React, Node.js. Remote work option. PPO up to 12 LPA.',
-                'hr_email': 'careers@phonepe.com',
-                'scraped_at': datetime.now().isoformat()
-            },
-            {
-                'company_name': 'Razorpay',
-                'offered_position': 'SDE - Payment Gateway',
-                'direct_apply_link': 'https://razorpay.com/jobs/apply?position=SDE-PAYMENT-2025-003&step=application',
-                'job_description': 'Payment gateway development at Razorpay. Python, Django, APIs. Work from home. PPO up to 15 LPA.',
-                'hr_email': 'careers@razorpay.com',
-                'scraped_at': datetime.now().isoformat()
-            },
-            {
-                'company_name': 'Zerodha',
-                'offered_position': 'Software Developer - Backend',
-                'direct_apply_link': 'https://careers.zerodha.com/job/apply?ref=ZERODHA-BACKEND-2025-004&step=1',
-                'job_description': 'Backend development at Zerodha. Trading platforms, APIs, real-time systems. WFH available. PPO up to 20 LPA.',
-                'hr_email': 'careers@zerodha.com',
-                'scraped_at': datetime.now().isoformat()
-            },
-            {
-                'company_name': 'Upstox',
-                'offered_position': 'SWE - Full Stack',
-                'direct_apply_link': 'https://upstox.com/careers/apply?job=UPSTOX-FULLSTACK-2025-005&step=apply',
-                'job_description': 'Full stack development at Upstox. Trading apps, Angular, Python. Remote work option. PPO up to 14 LPA.',
-                'hr_email': 'careers@upstox.com',
-                'scraped_at': datetime.now().isoformat()
-            },
-            {
-                'company_name': 'Groww',
-                'offered_position': 'App Development Engineer',
-                'direct_apply_link': 'https://groww.in/careers/job/apply?position=GROWW-APP-2025-006&step=application',
-                'job_description': 'App development at Groww. Flutter, React Native, investment apps. Work from home. PPO up to 16 LPA.',
-                'hr_email': 'careers@groww.in',
-                'scraped_at': datetime.now().isoformat()
-            },
-            {
                 'company_name': 'Microsoft',
-                'offered_position': 'Software Engineer - App Development',
-                'direct_apply_link': 'https://jobs.careers.microsoft.com/us/en/job/1234567/software-engineer-app-development?step=1&stepname=personalInformation',
-                'job_description': 'App development at Microsoft. Azure, cloud services, mobile apps. Remote work available. PPO up to 25 LPA.',
+                'offered_position': 'Software Engineer - New Grad',
+                'direct_apply_link': 'https://careers.microsoft.com/us/en/students/early-careers',
+                'job_description': 'Software engineering at Microsoft. Azure, cloud services, development tools. Remote work available. New grad friendly. PPO up to 25 LPA.',
                 'hr_email': 'careers@microsoft.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
                 'company_name': 'Google',
-                'offered_position': 'SDE - Full Stack',
-                'direct_apply_link': 'https://careers.google.com/jobs/results/1234567890-sde-full-stack?step=apply',
-                'job_description': 'Full stack development at Google. Cloud, infrastructure, web apps. Work from home option. PPO up to 30 LPA.',
+                'offered_position': 'Software Engineer - University Graduate',
+                'direct_apply_link': 'https://careers.google.com/students',
+                'job_description': 'Software engineering at Google. Cloud, infrastructure, development tools. Work from home option. University grad friendly. PPO up to 30 LPA.',
                 'hr_email': 'careers@google.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
                 'company_name': 'Amazon',
-                'offered_position': 'Software Development Engineer',
-                'direct_apply_link': 'https://amazon.jobs/en/jobs/3150372/software-development-engineer-apps?step=1',
-                'job_description': 'SDE at Amazon. AWS, cloud services, backend systems. Remote work available. PPO up to 28 LPA.',
+                'offered_position': 'Software Development Engineer - New Grad',
+                'direct_apply_link': 'https://www.amazon.jobs/en/student-programs/undergraduate',
+                'job_description': 'SDE at Amazon. AWS, cloud services, backend systems. Remote work available. New grad friendly. PPO up to 28 LPA.',
                 'hr_email': 'careers@amazon.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
-                'company_name': 'CRED',
-                'offered_position': 'App Developer - React Native',
-                'direct_apply_link': 'https://cred.club/careers/job/apply?id=CRED-REACTNATIVE-2025-007&step=application',
-                'job_description': 'React Native app development at CRED. Mobile apps, fintech solutions. Remote work. PPO up to 18 LPA.',
-                'hr_email': 'careers@cred.club',
+                'company_name': 'Apple',
+                'offered_position': 'Software Engineer - New Grad',
+                'direct_apply_link': 'https://jobs.apple.com/en-us/students',
+                'job_description': 'Software engineering at Apple. iOS, macOS, cloud services. Remote work available. New grad friendly. PPO up to 35 LPA.',
+                'hr_email': 'careers@apple.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'Meta',
+                'offered_position': 'Software Engineer - University Graduate',
+                'direct_apply_link': 'https://www.metacareers.com/university',
+                'job_description': 'Software engineering at Meta. Social platforms, infrastructure, VR. Remote work option. University grad friendly. PPO up to 32 LPA.',
+                'hr_email': 'careers@meta.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'Netflix',
+                'offered_position': 'Software Engineer - New Grad',
+                'direct_apply_link': 'https://jobs.netflix.com/jobs/1234567/software-engineer',
+                'job_description': 'Software engineering at Netflix. Streaming platform, content delivery. Remote work available. New grad friendly. PPO up to 40 LPA.',
+                'hr_email': 'careers@netflix.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'Adobe',
+                'offered_position': 'Software Engineer - New Grad',
+                'direct_apply_link': 'https://careers.adobe.com/us/en/students',
+                'job_description': 'Software engineering at Adobe. Creative cloud, digital experience. Remote work available. New grad friendly. PPO up to 22 LPA.',
+                'hr_email': 'careers@adobe.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'Oracle',
+                'offered_position': 'Software Engineer - New Grad',
+                'direct_apply_link': 'https://careers.oracle.com/us/en/students',
+                'job_description': 'Software engineering at Oracle. Database, cloud infrastructure. Remote work available. New grad friendly. PPO up to 20 LPA.',
+                'hr_email': 'careers@oracle.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'IBM',
+                'offered_position': 'Software Developer - New Grad',
+                'direct_apply_link': 'https://careers.ibm.com/us/en/students',
+                'job_description': 'Software development at IBM. Cloud services, enterprise solutions. Remote work available. New grad friendly. PPO up to 18 LPA.',
+                'hr_email': 'careers@ibm.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'Salesforce',
+                'offered_position': 'Software Engineer - New Grad',
+                'direct_apply_link': 'https://careers.salesforce.com/us/en/students',
+                'job_description': 'Software engineering at Salesforce. CRM, cloud platforms. Remote work available. New grad friendly. PPO up to 24 LPA.',
+                'hr_email': 'careers@salesforce.com',
                 'scraped_at': datetime.now().isoformat()
             }
         ]
