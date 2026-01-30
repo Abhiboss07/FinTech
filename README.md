@@ -1,4 +1,4 @@
-# 🚀 Optimized Fintech Job Scraper
+# 🚀 Fintech Job Scraper
 
 A powerful and streamlined job scraper designed specifically for extracting fintech job opportunities from top companies in India. This tool focuses on delivering essential information without duplicates, making job hunting efficient and effective.
 
