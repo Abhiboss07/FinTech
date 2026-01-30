@@ -43,7 +43,7 @@ def display_real_jobs_table():
         print("="*140)
         
         table = tabulate(display_df.values, headers=display_df.columns, 
-                        tablefmt='grid', maxcolwidths=[15, 30, 50, 20])
+                        tablefmt='grid', maxcolwidths=[12, 25, 40, 15])
         
         print(table)
         print("="*140)

@@ -57,6 +57,14 @@ class RealJobScraper:
             'Connection': 'keep-alive'
         })
 
+    def validate_url(self, url):
+        """Validate if URL is accessible"""
+        try:
+            response = self.session.head(url, timeout=10, allow_redirects=True)
+            return response.status_code == 200
+        except:
+            return False
+
     def create_real_job_links(self):
         """Create realistic job posting URLs that work"""
         print("🔗 Creating real job posting URLs...")
@@ -65,7 +73,7 @@ class RealJobScraper:
             {
                 'company_name': 'Razorpay',
                 'offered_position': 'SDE Backend Developer - Payment Platform',
-                'direct_apply_link': 'https://careers.microsoft.com/us/en/job/123456/sde-backend-developer',
+                'direct_apply_link': 'https://razorpay.com/jobs/',
                 'job_description': 'Backend development for payment systems. Fresh graduate role at leading fintech.',
                 'hr_email': 'careers@razorpay.com',
                 'scraped_at': datetime.now().isoformat()
@@ -73,7 +81,7 @@ class RealJobScraper:
             {
                 'company_name': 'PhonePe',
                 'offered_position': 'Software Engineer - UPI Platform',
-                'direct_apply_link': 'https://www.google.com/about/careers/applications/jobs/results/?target=Software%20Engineer',
+                'direct_apply_link': 'https://www.phonepe.com/careers/',
                 'job_description': 'UPI platform development. Backend role in digital payments.',
                 'hr_email': 'hr@phonepe.com',
                 'scraped_at': datetime.now().isoformat()
@@ -81,7 +89,7 @@ class RealJobScraper:
             {
                 'company_name': 'Zerodha',
                 'offered_position': 'Backend Developer - Trading Platform',
-                'direct_apply_link': 'https://www.amazon.jobs/en/jobs/123456/backend-developer',
+                'direct_apply_link': 'https://zerodha.com/careers/',
                 'job_description': 'Trading platform backend development. Low-latency systems.',
                 'hr_email': 'careers@zerodha.com',
                 'scraped_at': datetime.now().isoformat()
@@ -89,7 +97,7 @@ class RealJobScraper:
             {
                 'company_name': 'Groww',
                 'offered_position': 'Full Stack Developer - Investment Platform',
-                'direct_apply_link': 'https://www.facebook.com/careers/jobs/123456/full-stack-developer',
+                'direct_apply_link': 'https://groww.in/careers/',
                 'job_description': 'Investment platform development. React, Node.js, cloud tech.',
                 'hr_email': 'careers@groww.in',
                 'scraped_at': datetime.now().isoformat()
@@ -97,7 +105,7 @@ class RealJobScraper:
             {
                 'company_name': 'PayU',
                 'offered_position': 'Software Developer - Digital Payments',
-                'direct_apply_link': 'https://www.apple.com/jobs/us/123456/software-developer',
+                'direct_apply_link': 'https://payu.in/careers/',
                 'job_description': 'Digital payment solutions. Payment gateway integrations.',
                 'hr_email': 'careers@payu.in',
                 'scraped_at': datetime.now().isoformat()
@@ -105,14 +113,25 @@ class RealJobScraper:
             {
                 'company_name': 'CRED',
                 'offered_position': 'Backend Developer - Payment Systems',
-                'direct_apply_link': 'https://www.netflix.com/jobs/123456/backend-developer',
+                'direct_apply_link': 'https://cred.club/',
                 'job_description': 'Payment systems development. Reward algorithms, processing.',
                 'hr_email': 'careers@cred.club',
                 'scraped_at': datetime.now().isoformat()
             }
         ]
         
-        self.jobs_data = real_jobs
+        # Validate URLs and filter out broken ones
+        valid_jobs = []
+        for job in real_jobs:
+            print(f"🔍 Validating {job['company_name']} URL...")
+            if self.validate_url(job['direct_apply_link']):
+                valid_jobs.append(job)
+                print(f"✅ {job['company_name']} URL is valid")
+            else:
+                print(f"❌ {job['company_name']} URL is invalid, skipping")
+        
+        self.jobs_data = valid_jobs
+        print(f"📊 Validated {len(valid_jobs)} out of {len(real_jobs)} job URLs")
 
     def save_real_jobs(self):
         """Save real job data with direct links"""
