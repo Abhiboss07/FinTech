@@ -22,40 +22,40 @@ class OptimizedFintechScraper:
         self.processed_positions = set()  # Track unique company+position combinations
         self.setup_session()
         
-        # Enhanced company data with details and direct application URLs
+        # Enhanced company data with details and real career page URLs
         self.companies_info = {
             'Razorpay': {
-                'career_url': 'https://razorpay.com/jobs/5953903003',
+                'career_url': 'https://razorpay.com/careers/#open-roles',
                 'description': 'Leading payment gateway solution in India',
                 'industry': 'Financial Technology',
                 'hr_email': 'careers@razorpay.com'
             },
             'PhonePe': {
-                'career_url': 'https://www.phonepe.com/careers/roles/software-engineer',
+                'career_url': 'https://www.phonepe.com/careers',
                 'description': 'Digital payments and UPI platform',
                 'industry': 'Financial Technology',
                 'hr_email': 'hr@phonepe.com'
             },
             'Zerodha': {
-                'career_url': 'https://careers.zerodha.com/jobs/backend-developer',
+                'career_url': 'https://zerodha.com/careers',
                 'description': 'India\'s largest retail stock broker',
                 'industry': 'Financial Technology',
                 'hr_email': 'careers@zerodha.com'
             },
             'Groww': {
-                'career_url': 'https://groww.in/careers/full-stack-developer-apply',
+                'career_url': 'https://groww.in/careers',
                 'description': 'Investment platform for stocks, mutual funds, and more',
                 'industry': 'Financial Technology',
                 'hr_email': 'careers@groww.in'
             },
             'PayU': {
-                'career_url': 'https://payu.in/careers/software-developer-application',
+                'career_url': 'https://payu.in/careers',
                 'description': 'Online payment solutions provider',
                 'industry': 'Financial Technology',
                 'hr_email': 'careers@payu.in'
             },
             'CRED': {
-                'career_url': 'https://careers.cred.club/apply/backend-developer-payments',
+                'career_url': 'https://careers.cred.club',
                 'description': 'Credit card bill payment and rewards platform',
                 'industry': 'Financial Technology',
                 'hr_email': 'careers@cred.club'
@@ -194,7 +194,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'Razorpay',
                 'offered_position': 'SDE Backend Developer - Payment Platform',
-                'direct_apply_link': 'https://razorpay.com/jobs/5953903003',
+                'direct_apply_link': 'https://razorpay.com/careers/#open-roles',
                 'job_description': 'Work on backend development, payment systems at Razorpay. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@razorpay.com',
                 'scraped_at': datetime.now().isoformat()
@@ -202,7 +202,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'PhonePe',
                 'offered_position': 'Software Engineer - UPI Platform',
-                'direct_apply_link': 'https://www.phonepe.com/careers/roles/software-engineer',
+                'direct_apply_link': 'https://www.phonepe.com/careers',
                 'job_description': 'Work on backend development, payment systems at PhonePe. Fresh graduate position with growth opportunities.',
                 'hr_email': 'hr@phonepe.com',
                 'scraped_at': datetime.now().isoformat()
@@ -210,7 +210,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'Zerodha',
                 'offered_position': 'Backend Developer - Trading Platform',
-                'direct_apply_link': 'https://careers.zerodha.com/jobs/backend-developer',
+                'direct_apply_link': 'https://zerodha.com/careers',
                 'job_description': 'Work on backend development, trading platform at Zerodha. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@zerodha.com',
                 'scraped_at': datetime.now().isoformat()
@@ -218,7 +218,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'Groww',
                 'offered_position': 'Full Stack Developer - Investment Platform',
-                'direct_apply_link': 'https://groww.in/careers/full-stack-developer-apply',
+                'direct_apply_link': 'https://groww.in/careers',
                 'job_description': 'Work on full stack development, investment solutions at Groww. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@groww.in',
                 'scraped_at': datetime.now().isoformat()
@@ -226,7 +226,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'PayU',
                 'offered_position': 'Software Developer - Digital Payments',
-                'direct_apply_link': 'https://payu.in/careers/software-developer-application',
+                'direct_apply_link': 'https://payu.in/careers',
                 'job_description': 'Work on payment systems at PayU. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@payu.in',
                 'scraped_at': datetime.now().isoformat()
@@ -234,7 +234,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'CRED',
                 'offered_position': 'Backend Developer - Payment Systems',
-                'direct_apply_link': 'https://careers.cred.club/apply/backend-developer-payments',
+                'direct_apply_link': 'https://careers.cred.club',
                 'job_description': 'Work on backend development, payment systems at CRED. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@cred.club',
                 'scraped_at': datetime.now().isoformat()
