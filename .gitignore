@@ -1,0 +1,29 @@
+# PDF reports
+*.pdf
+
+# CSV data files
+*.csv
+
+# Excel files
+*.xlsx
+
+# JSON data files
+*.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
