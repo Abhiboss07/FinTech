@@ -215,6 +215,33 @@ class RealJobScraper:
         
         return jobs
 
+    def filter_latest_jobs(self, jobs, days_old=7):
+        """Filter jobs to show only latest postings within specified days"""
+        from datetime import datetime, timedelta
+        
+        cutoff_date = datetime.now() - timedelta(days=days_old)
+        latest_jobs = []
+        
+        for job in jobs:
+            try:
+                # Parse the scraped_at date
+                job_date = datetime.fromisoformat(job['scraped_at'].replace('Z', '+00:00'))
+                
+                # Check if job is within the specified days
+                if job_date >= cutoff_date:
+                    job['days_old'] = (datetime.now() - job_date.replace(tzinfo=None)).days
+                    latest_jobs.append(job)
+                    
+            except Exception as e:
+                # If date parsing fails, include the job
+                job['days_old'] = 0
+                latest_jobs.append(job)
+        
+        # Sort by posting date (newest first)
+        latest_jobs.sort(key=lambda x: x['scraped_at'], reverse=True)
+        
+        return latest_jobs
+
     def create_real_job_links(self):
         """Create real job postings with direct apply links from multiple websites"""
         print("🔗 Creating real job postings with direct apply links from multiple websites...")
@@ -245,8 +272,13 @@ class RealJobScraper:
                 unique_jobs.append(job)
                 seen.add(key)
         
-        self.jobs_data = unique_jobs
-        print(f"� Total unique job postings found: {len(unique_jobs)}")
+        # Filter for latest jobs (last 7 days)
+        print("📅 Filtering for latest jobs (last 7 days)...")
+        latest_jobs = self.filter_latest_jobs(unique_jobs, days_old=7)
+        
+        self.jobs_data = latest_jobs
+        print(f"📊 Total unique job postings found: {len(unique_jobs)}")
+        print(f"🆕 Latest jobs (last 7 days): {len(latest_jobs)}")
         print(f"🔗 All links are direct job posting URLs from LinkedIn, Naukri, and Indeed")
 
     def save_real_jobs(self):
@@ -307,18 +339,19 @@ class RealJobScraper:
         return max(numbers) + 1 if numbers else 1
 
     def run_real_scraper(self):
-        """Main enhanced scraper function for direct job postings"""
-        print("🚀 Starting Direct Job Posting Scraper...")
+        """Main enhanced scraper function for latest job postings"""
+        print("🚀 Starting Latest Job Posting Scraper...")
         print("💼 Targeting Backend, SDE, Full Stack Developer positions")
         print("🌐 Scraping from LinkedIn, Naukri, and Indeed")
-        print("🔗 Providing direct job posting links (not career pages)")
+        print("� Showing only latest jobs (last 7 days)")
+        print("�🔗 Providing direct job posting links (not career pages)")
         
         self.create_real_job_links()
         df, csv_filename = self.save_real_jobs()
         
-        print(f"\n✅ Direct job posting scraping completed!")
-        print(f"📊 Found {len(df)} job postings with direct apply links")
-        print(f"� Positions: Backend Developer, SDE, Full Stack Developer")
+        print(f"\n✅ Latest job posting scraping completed!")
+        print(f"📊 Found {len(df)} latest job postings (last 7 days)")
+        print(f"💼 Positions: Backend Developer, SDE, Full Stack Developer")
         print(f"🌐 Sources: LinkedIn, Naukri, Indeed")
         print(f"🔗 All links are direct job posting URLs")
         print(f"📧 HR emails included for direct contact")

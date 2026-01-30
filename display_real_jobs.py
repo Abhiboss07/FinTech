@@ -36,14 +36,19 @@ def display_real_jobs_table():
         display_df = df[['company_name', 'offered_position', 'direct_apply_link', 'hr_email']]
         display_df.columns = ['Company', 'Position', 'Job Posting Link', 'HR Email']
         
+        # Add posting date if available
+        if 'scraped_at' in df.columns:
+            display_df.insert(1, 'Posted', df['scraped_at'].str[:10])  # Show only date part
+        
         print("\n" + "="*140)
-        print("🚀 REAL FINTECH JOB POSTINGS")
+        print("🚀 LATEST JOB POSTINGS (Last 7 Days)")
         print(f"📁 Source: {csv_file}")
         print("🔗 Direct links to actual job postings (like Grok)")
+        print("📅 Showing only newest job postings")
         print("="*140)
         
         table = tabulate(display_df.values, headers=display_df.columns, 
-                        tablefmt='grid', maxcolwidths=[12, 25, 40, 15])
+                        tablefmt='grid', maxcolwidths=[12, 12, 25, 35, 12])
         
         print(table)
         print("="*140)
@@ -52,7 +57,9 @@ def display_real_jobs_table():
         print("="*140)
         
         for index, row in df.iterrows():
+            posted_date = row['scraped_at'][:10] if 'scraped_at' in row else 'Recent'
             print(f"\n🏢 {row['company_name']} - {row['offered_position']}")
+            print(f"📅 Posted: {posted_date}")
             print("-" * 100)
             print(f"🔗 Job Posting: {row['direct_apply_link']}")
             print(f"📧 HR Email: {row['hr_email']}")
