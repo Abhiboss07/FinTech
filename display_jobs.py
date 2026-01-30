@@ -39,10 +39,10 @@ def display_jobs_table():
         df = pd.read_csv(csv_file)
         
         # Select relevant columns for display
-        display_df = df[['company_name', 'company_details', 'offered_position', 'direct_apply_link', 'hr_email']]
+        display_df = df[['company_name', 'offered_position', 'direct_apply_link', 'hr_email']]
         
         # Rename columns for better display
-        display_df.columns = ['Company', 'Details', 'Position', 'Apply Link', 'HR Email']
+        display_df.columns = ['Company', 'Position', 'Apply Link', 'HR Email']
         
         # Display using tabulate for better formatting
         print("\n" + "="*120)
@@ -52,7 +52,7 @@ def display_jobs_table():
         
         # Create table with tabulate
         table = tabulate(display_df.values, headers=display_df.columns, 
-                        tablefmt='grid', maxcolwidths=[15, 40, 25, 35, 20])
+                        tablefmt='grid', maxcolwidths=[15, 30, 35, 25])
         
         print(table)
         print("="*120)

@@ -129,10 +129,9 @@ class OptimizedFintechScraper:
                             
                             job_data = {
                                 'company_name': company_name,
-                                'company_details': f"{company_info['description']} | {company_info['industry']}",
                                 'offered_position': title,
                                 'direct_apply_link': apply_link,
-                                'job_description': description,
+                                'job_description': self.create_short_description(company_name, title, description),
                                 'hr_email': company_info['hr_email'],
                                 'scraped_at': datetime.now().isoformat()
                             }
@@ -146,25 +145,31 @@ class OptimizedFintechScraper:
             except Exception as e:
                 print(f"    ❌ Error: {e}")
 
-    def extract_job_description(self, element, company_name):
-        """Extract job description from element or nearby content"""
-        # Try to find description near the job title
-        parent = element.parent
-        description = ""
+    def create_short_description(self, company_name, position, full_description):
+        """Create a short, concise job description"""
+        # Extract key information from full description
+        if len(full_description) <= 100:
+            return full_description
         
-        if parent:
-            # Look for description in nearby elements
-            next_elements = parent.find_all_next(['p', 'div', 'span'], limit=3)
-            for elem in next_elements:
-                text = elem.get_text().strip()
-                if len(text) > 50 and not text.startswith('Apply') and not text.startswith('Location'):
-                    description = text[:300] + "..." if len(text) > 300 else text
-                    break
+        # Look for key phrases and create concise description
+        key_skills = []
+        if 'backend' in position.lower() or 'backend' in full_description.lower():
+            key_skills.append('backend development')
+        if 'payment' in full_description.lower():
+            key_skills.append('payment systems')
+        if 'trading' in full_description.lower():
+            key_skills.append('trading platform')
+        if 'investment' in full_description.lower():
+            key_skills.append('investment solutions')
+        if 'full stack' in position.lower():
+            key_skills.append('full stack development')
         
-        if not description:
-            description = f"Exciting opportunity at {company_name} for motivated fresh graduates. Join our innovative fintech team and work on cutting-edge financial technology solutions."
-        
-        return description
+        # Create short description
+        if key_skills:
+            skills_str = ', '.join(key_skills[:2])  # Limit to 2 key skills
+            return f"Work on {skills_str} at {company_name}. Fresh graduate position with growth opportunities."
+        else:
+            return f"Exciting opportunity at {company_name} for motivated fresh graduates. Join our innovative team."
 
     def extract_apply_link(self, element, base_url):
         """Extract direct apply link"""
@@ -188,55 +193,49 @@ class OptimizedFintechScraper:
         optimized_jobs = [
             {
                 'company_name': 'Razorpay',
-                'company_details': 'Leading payment gateway solution in India | Financial Technology',
                 'offered_position': 'SDE Backend Developer - Payment Platform',
                 'direct_apply_link': 'https://razorpay.com/careers/backend-sde',
-                'job_description': 'We are looking for talented Backend Developers to join our payment platform team. You will work on building scalable payment solutions, handle millions of transactions, and ensure system reliability. Strong programming skills in Python/Java required. Fresh graduates with strong fundamentals welcome.',
+                'job_description': 'Work on backend development, payment systems at Razorpay. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@razorpay.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
                 'company_name': 'PhonePe',
-                'company_details': 'Digital payments and UPI platform | Financial Technology',
                 'offered_position': 'Software Engineer - UPI Platform',
                 'direct_apply_link': 'https://www.phonepe.com/careers/software-engineer',
-                'job_description': 'Join our UPI platform development team and work on India\'s largest digital payment ecosystem. Looking for fresh graduates with strong backend development skills. You will work on high-performance systems handling millions of daily transactions.',
+                'job_description': 'Work on backend development, payment systems at PhonePe. Fresh graduate position with growth opportunities.',
                 'hr_email': 'hr@phonepe.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
                 'company_name': 'Zerodha',
-                'company_details': 'India\'s largest retail stock broker | Financial Technology',
                 'offered_position': 'Backend Developer - Trading Platform',
                 'direct_apply_link': 'https://zerodha.com/careers/backend-developer',
-                'job_description': 'Looking for backend developers to work on India\'s largest trading platform. You will build low-latency trading systems, real-time data processing pipelines, and ensure platform stability. Fresh graduates with strong problem-solving skills welcome.',
+                'job_description': 'Work on backend development, trading platform at Zerodha. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@zerodha.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
                 'company_name': 'Groww',
-                'company_details': 'Investment platform for stocks, mutual funds, and more | Financial Technology',
                 'offered_position': 'Full Stack Developer - Investment Platform',
                 'direct_apply_link': 'https://groww.in/careers/full-stack',
-                'job_description': 'Join our investment platform team and build user-friendly investment solutions. Looking for fresh graduates with full stack development experience. You will work on React, Node.js, and cloud technologies to democratize investing for millions of Indians.',
+                'job_description': 'Work on full stack development, investment solutions at Groww. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@groww.in',
                 'scraped_at': datetime.now().isoformat()
             },
             {
                 'company_name': 'PayU',
-                'company_details': 'Online payment solutions provider | Financial Technology',
                 'offered_position': 'Software Developer - Digital Payments',
                 'direct_apply_link': 'https://payu.in/careers/software-developer',
-                'job_description': 'Looking for software developers for our digital payment solutions. You will work on payment gateway integrations, fraud detection systems, and cross-border payment solutions. Fresh graduates with strong programming skills and interest in fintech welcome.',
+                'job_description': 'Work on payment systems at PayU. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@payu.in',
                 'scraped_at': datetime.now().isoformat()
             },
             {
                 'company_name': 'CRED',
-                'company_details': 'Credit card bill payment and rewards platform | Financial Technology',
                 'offered_position': 'Backend Developer - Payment Systems',
                 'direct_apply_link': 'https://careers.cred.club/backend-developer',
-                'job_description': 'Join CRED to build innovative payment and reward systems. You will work on complex payment processing, reward algorithms, and user engagement features. Looking for fresh graduates with strong backend development skills and passion for fintech innovation.',
+                'job_description': 'Work on backend development, payment systems at CRED. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@cred.club',
                 'scraped_at': datetime.now().isoformat()
             }
@@ -284,7 +283,7 @@ class OptimizedFintechScraper:
         df = pd.DataFrame(self.jobs_data)
         
         # Ensure required columns are present and in correct order
-        required_columns = ['company_name', 'company_details', 'offered_position', 'direct_apply_link', 'job_description', 'hr_email', 'scraped_at']
+        required_columns = ['company_name', 'offered_position', 'direct_apply_link', 'job_description', 'hr_email', 'scraped_at']
         
         # Add missing columns with empty values
         for col in required_columns:
