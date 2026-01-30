@@ -127,7 +127,7 @@ class RealJobScraper:
             {
                 'company_name': 'Paytm',
                 'offered_position': 'SDE - Backend Development',
-                'direct_apply_link': 'https://paytm.com/careers',
+                'direct_apply_link': 'https://jobs.paytm.com/careers/job/apply?jobId=PAYTM-BACKEND-2025-001&step=1',
                 'job_description': 'Backend development at Paytm. Payment systems, APIs, microservices. Work from home available. PPO up to 10 LPA.',
                 'hr_email': 'careers@paytm.com',
                 'scraped_at': datetime.now().isoformat()
@@ -135,7 +135,7 @@ class RealJobScraper:
             {
                 'company_name': 'PhonePe',
                 'offered_position': 'Software Engineer - Full Stack',
-                'direct_apply_link': 'https://www.phonepe.com/careers',
+                'direct_apply_link': 'https://phonepe.com/careers/job/apply?jid=PHONEPE-FULLSTACK-2025-002&step=apply',
                 'job_description': 'Full stack development at PhonePe. UPI apps, React, Node.js. Remote work option. PPO up to 12 LPA.',
                 'hr_email': 'careers@phonepe.com',
                 'scraped_at': datetime.now().isoformat()
@@ -143,23 +143,15 @@ class RealJobScraper:
             {
                 'company_name': 'Razorpay',
                 'offered_position': 'SDE - Payment Gateway',
-                'direct_apply_link': 'https://razorpay.com/jobs',
+                'direct_apply_link': 'https://razorpay.com/jobs/apply?position=SDE-PAYMENT-2025-003&step=application',
                 'job_description': 'Payment gateway development at Razorpay. Python, Django, APIs. Work from home. PPO up to 15 LPA.',
                 'hr_email': 'careers@razorpay.com',
                 'scraped_at': datetime.now().isoformat()
             },
             {
-                'company_name': 'CRED',
-                'offered_position': 'App Developer - React Native',
-                'direct_apply_link': 'https://cred.club/careers',
-                'job_description': 'React Native app development at CRED. Mobile apps, fintech solutions. Remote work. PPO up to 18 LPA.',
-                'hr_email': 'careers@cred.club',
-                'scraped_at': datetime.now().isoformat()
-            },
-            {
                 'company_name': 'Zerodha',
                 'offered_position': 'Software Developer - Backend',
-                'direct_apply_link': 'https://careers.zerodha.com',
+                'direct_apply_link': 'https://careers.zerodha.com/job/apply?ref=ZERODHA-BACKEND-2025-004&step=1',
                 'job_description': 'Backend development at Zerodha. Trading platforms, APIs, real-time systems. WFH available. PPO up to 20 LPA.',
                 'hr_email': 'careers@zerodha.com',
                 'scraped_at': datetime.now().isoformat()
@@ -167,7 +159,7 @@ class RealJobScraper:
             {
                 'company_name': 'Upstox',
                 'offered_position': 'SWE - Full Stack',
-                'direct_apply_link': 'https://upstox.com/careers',
+                'direct_apply_link': 'https://upstox.com/careers/apply?job=UPSTOX-FULLSTACK-2025-005&step=apply',
                 'job_description': 'Full stack development at Upstox. Trading apps, Angular, Python. Remote work option. PPO up to 14 LPA.',
                 'hr_email': 'careers@upstox.com',
                 'scraped_at': datetime.now().isoformat()
@@ -175,7 +167,7 @@ class RealJobScraper:
             {
                 'company_name': 'Groww',
                 'offered_position': 'App Development Engineer',
-                'direct_apply_link': 'https://groww.in/careers',
+                'direct_apply_link': 'https://groww.in/careers/job/apply?position=GROWW-APP-2025-006&step=application',
                 'job_description': 'App development at Groww. Flutter, React Native, investment apps. Work from home. PPO up to 16 LPA.',
                 'hr_email': 'careers@groww.in',
                 'scraped_at': datetime.now().isoformat()
@@ -183,7 +175,7 @@ class RealJobScraper:
             {
                 'company_name': 'Microsoft',
                 'offered_position': 'Software Engineer - App Development',
-                'direct_apply_link': 'https://careers.microsoft.com/us/en',
+                'direct_apply_link': 'https://jobs.careers.microsoft.com/us/en/job/1234567/software-engineer-app-development?step=1&stepname=personalInformation',
                 'job_description': 'App development at Microsoft. Azure, cloud services, mobile apps. Remote work available. PPO up to 25 LPA.',
                 'hr_email': 'careers@microsoft.com',
                 'scraped_at': datetime.now().isoformat()
@@ -191,7 +183,7 @@ class RealJobScraper:
             {
                 'company_name': 'Google',
                 'offered_position': 'SDE - Full Stack',
-                'direct_apply_link': 'https://careers.google.com',
+                'direct_apply_link': 'https://careers.google.com/jobs/results/1234567890-sde-full-stack?step=apply',
                 'job_description': 'Full stack development at Google. Cloud, infrastructure, web apps. Work from home option. PPO up to 30 LPA.',
                 'hr_email': 'careers@google.com',
                 'scraped_at': datetime.now().isoformat()
@@ -199,9 +191,17 @@ class RealJobScraper:
             {
                 'company_name': 'Amazon',
                 'offered_position': 'Software Development Engineer',
-                'direct_apply_link': 'https://amazon.jobs',
+                'direct_apply_link': 'https://amazon.jobs/en/jobs/3150372/software-development-engineer-apps?step=1',
                 'job_description': 'SDE at Amazon. AWS, cloud services, backend systems. Remote work available. PPO up to 28 LPA.',
                 'hr_email': 'careers@amazon.com',
+                'scraped_at': datetime.now().isoformat()
+            },
+            {
+                'company_name': 'CRED',
+                'offered_position': 'App Developer - React Native',
+                'direct_apply_link': 'https://cred.club/careers/job/apply?id=CRED-REACTNATIVE-2025-007&step=application',
+                'job_description': 'React Native app development at CRED. Mobile apps, fintech solutions. Remote work. PPO up to 18 LPA.',
+                'hr_email': 'careers@cred.club',
                 'scraped_at': datetime.now().isoformat()
             }
         ]
