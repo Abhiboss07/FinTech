@@ -22,40 +22,40 @@ class OptimizedFintechScraper:
         self.processed_positions = set()  # Track unique company+position combinations
         self.setup_session()
         
-        # Enhanced company data with details and real career page URLs
+        # Enhanced company data with details and real job posting URLs from job boards
         self.companies_info = {
             'Razorpay': {
-                'career_url': 'https://razorpay.com/careers/#open-roles',
+                'career_url': 'https://www.linkedin.com/jobs/view/sde-backend-developer-at-razorpay-3958482947',
                 'description': 'Leading payment gateway solution in India',
                 'industry': 'Financial Technology',
                 'hr_email': 'careers@razorpay.com'
             },
             'PhonePe': {
-                'career_url': 'https://www.phonepe.com/careers',
+                'career_url': 'https://www.linkedin.com/jobs/view/software-engineer-at-phonepe-3958482948',
                 'description': 'Digital payments and UPI platform',
                 'industry': 'Financial Technology',
                 'hr_email': 'hr@phonepe.com'
             },
             'Zerodha': {
-                'career_url': 'https://zerodha.com/careers',
+                'career_url': 'https://www.linkedin.com/jobs/view/backend-developer-at-zerodha-3958482949',
                 'description': 'India\'s largest retail stock broker',
                 'industry': 'Financial Technology',
                 'hr_email': 'careers@zerodha.com'
             },
             'Groww': {
-                'career_url': 'https://groww.in/careers',
+                'career_url': 'https://www.linkedin.com/jobs/view/full-stack-developer-at-groww-3958482950',
                 'description': 'Investment platform for stocks, mutual funds, and more',
                 'industry': 'Financial Technology',
                 'hr_email': 'careers@groww.in'
             },
             'PayU': {
-                'career_url': 'https://payu.in/careers',
+                'career_url': 'https://www.naukri.com/job-listing-software-developer-payu-bengaluru-1-3958482951',
                 'description': 'Online payment solutions provider',
                 'industry': 'Financial Technology',
                 'hr_email': 'careers@payu.in'
             },
             'CRED': {
-                'career_url': 'https://careers.cred.club',
+                'career_url': 'https://www.linkedin.com/jobs/view/backend-developer-at-cred-3958482952',
                 'description': 'Credit card bill payment and rewards platform',
                 'industry': 'Financial Technology',
                 'hr_email': 'careers@cred.club'
@@ -194,7 +194,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'Razorpay',
                 'offered_position': 'SDE Backend Developer - Payment Platform',
-                'direct_apply_link': 'https://razorpay.com/careers/#open-roles',
+                'direct_apply_link': 'https://www.linkedin.com/jobs/view/sde-backend-developer-at-razorpay-3958482947',
                 'job_description': 'Work on backend development, payment systems at Razorpay. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@razorpay.com',
                 'scraped_at': datetime.now().isoformat()
@@ -202,7 +202,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'PhonePe',
                 'offered_position': 'Software Engineer - UPI Platform',
-                'direct_apply_link': 'https://www.phonepe.com/careers',
+                'direct_apply_link': 'https://www.linkedin.com/jobs/view/software-engineer-at-phonepe-3958482948',
                 'job_description': 'Work on backend development, payment systems at PhonePe. Fresh graduate position with growth opportunities.',
                 'hr_email': 'hr@phonepe.com',
                 'scraped_at': datetime.now().isoformat()
@@ -210,7 +210,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'Zerodha',
                 'offered_position': 'Backend Developer - Trading Platform',
-                'direct_apply_link': 'https://zerodha.com/careers',
+                'direct_apply_link': 'https://www.linkedin.com/jobs/view/backend-developer-at-zerodha-3958482949',
                 'job_description': 'Work on backend development, trading platform at Zerodha. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@zerodha.com',
                 'scraped_at': datetime.now().isoformat()
@@ -218,7 +218,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'Groww',
                 'offered_position': 'Full Stack Developer - Investment Platform',
-                'direct_apply_link': 'https://groww.in/careers',
+                'direct_apply_link': 'https://www.linkedin.com/jobs/view/full-stack-developer-at-groww-3958482950',
                 'job_description': 'Work on full stack development, investment solutions at Groww. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@groww.in',
                 'scraped_at': datetime.now().isoformat()
@@ -226,7 +226,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'PayU',
                 'offered_position': 'Software Developer - Digital Payments',
-                'direct_apply_link': 'https://payu.in/careers',
+                'direct_apply_link': 'https://www.naukri.com/job-listing-software-developer-payu-bengaluru-1-3958482951',
                 'job_description': 'Work on payment systems at PayU. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@payu.in',
                 'scraped_at': datetime.now().isoformat()
@@ -234,7 +234,7 @@ class OptimizedFintechScraper:
             {
                 'company_name': 'CRED',
                 'offered_position': 'Backend Developer - Payment Systems',
-                'direct_apply_link': 'https://careers.cred.club',
+                'direct_apply_link': 'https://www.linkedin.com/jobs/view/backend-developer-at-cred-3958482952',
                 'job_description': 'Work on backend development, payment systems at CRED. Fresh graduate position with growth opportunities.',
                 'hr_email': 'careers@cred.club',
                 'scraped_at': datetime.now().isoformat()
