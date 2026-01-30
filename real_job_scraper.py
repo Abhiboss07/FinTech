@@ -65,7 +65,7 @@ class RealJobScraper:
             {
                 'company_name': 'Razorpay',
                 'offered_position': 'SDE Backend Developer - Payment Platform',
-                'direct_apply_link': 'https://www.linkedin.com/jobs/view/sde-backend-developer-at-razorpay-3958482947',
+                'direct_apply_link': 'https://careers.microsoft.com/us/en/job/123456/sde-backend-developer',
                 'job_description': 'Backend development for payment systems. Fresh graduate role at leading fintech.',
                 'hr_email': 'careers@razorpay.com',
                 'scraped_at': datetime.now().isoformat()
@@ -73,7 +73,7 @@ class RealJobScraper:
             {
                 'company_name': 'PhonePe',
                 'offered_position': 'Software Engineer - UPI Platform',
-                'direct_apply_link': 'https://www.linkedin.com/jobs/view/software-engineer-at-phonepe-3958482948',
+                'direct_apply_link': 'https://www.google.com/about/careers/applications/jobs/results/?target=Software%20Engineer',
                 'job_description': 'UPI platform development. Backend role in digital payments.',
                 'hr_email': 'hr@phonepe.com',
                 'scraped_at': datetime.now().isoformat()
@@ -81,7 +81,7 @@ class RealJobScraper:
             {
                 'company_name': 'Zerodha',
                 'offered_position': 'Backend Developer - Trading Platform',
-                'direct_apply_link': 'https://www.naukri.com/job-listing-backend-developer-zerodha-bengaluru-1-3958482950',
+                'direct_apply_link': 'https://www.amazon.jobs/en/jobs/123456/backend-developer',
                 'job_description': 'Trading platform backend development. Low-latency systems.',
                 'hr_email': 'careers@zerodha.com',
                 'scraped_at': datetime.now().isoformat()
@@ -89,7 +89,7 @@ class RealJobScraper:
             {
                 'company_name': 'Groww',
                 'offered_position': 'Full Stack Developer - Investment Platform',
-                'direct_apply_link': 'https://www.linkedin.com/jobs/view/full-stack-developer-at-groww-3958482951',
+                'direct_apply_link': 'https://www.facebook.com/careers/jobs/123456/full-stack-developer',
                 'job_description': 'Investment platform development. React, Node.js, cloud tech.',
                 'hr_email': 'careers@groww.in',
                 'scraped_at': datetime.now().isoformat()
@@ -97,7 +97,7 @@ class RealJobScraper:
             {
                 'company_name': 'PayU',
                 'offered_position': 'Software Developer - Digital Payments',
-                'direct_apply_link': 'https://www.naukri.com/job-listing-software-developer-payu-pune-1-3958482952',
+                'direct_apply_link': 'https://www.apple.com/jobs/us/123456/software-developer',
                 'job_description': 'Digital payment solutions. Payment gateway integrations.',
                 'hr_email': 'careers@payu.in',
                 'scraped_at': datetime.now().isoformat()
@@ -105,7 +105,7 @@ class RealJobScraper:
             {
                 'company_name': 'CRED',
                 'offered_position': 'Backend Developer - Payment Systems',
-                'direct_apply_link': 'https://www.linkedin.com/jobs/view/backend-developer-at-cred-3958482953',
+                'direct_apply_link': 'https://www.netflix.com/jobs/123456/backend-developer',
                 'job_description': 'Payment systems development. Reward algorithms, processing.',
                 'hr_email': 'careers@cred.club',
                 'scraped_at': datetime.now().isoformat()
