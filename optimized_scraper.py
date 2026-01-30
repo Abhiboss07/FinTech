@@ -13,6 +13,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import json
 import os
+import glob
 
 class OptimizedFintechScraper:
     def __init__(self):
@@ -247,8 +248,34 @@ class OptimizedFintechScraper:
                 self.jobs_data.append(job)
                 self.add_position(job['company_name'], job['offered_position'])
 
-    def save_optimized_data(self, filename="optimized_fintech_jobs.csv"):
-        """Save optimized jobs data to CSV"""
+    def get_next_sequence_number(self):
+        """Get the next sequence number for CSV files"""
+        # Create data directory if it doesn't exist
+        if not os.path.exists('data'):
+            os.makedirs('data')
+        
+        # Find existing CSV files in data folder
+        pattern = os.path.join('data', 'fintech_jobs_*.csv')
+        existing_files = glob.glob(pattern)
+        
+        if not existing_files:
+            return 1
+        
+        # Extract sequence numbers from existing files
+        numbers = []
+        for file in existing_files:
+            try:
+                # Extract number from filename like "fintech_jobs_001.csv"
+                basename = os.path.basename(file)
+                number_part = basename.replace('fintech_jobs_', '').replace('.csv', '')
+                numbers.append(int(number_part))
+            except:
+                continue
+        
+        return max(numbers) + 1 if numbers else 1
+
+    def save_optimized_data(self, filename=None):
+        """Save optimized jobs data to timestamped CSV with sequence number"""
         if not self.jobs_data:
             print("No jobs found. Creating optimized job data...")
             self.create_optimized_jobs()
@@ -270,11 +297,21 @@ class OptimizedFintechScraper:
         # Sort by company name
         df = df.sort_values('company_name')
         
-        # Save to CSV
-        df.to_csv(filename, index=False, encoding='utf-8')
-        print(f"✅ Saved {len(df)} optimized jobs to {filename}")
+        # Generate filename with sequence number and timestamp
+        sequence = self.get_next_sequence_number()
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        csv_filename = f'data/fintech_jobs_{sequence:03d}_{timestamp}.csv'
         
-        return df
+        # Save to CSV
+        df.to_csv(csv_filename, index=False, encoding='utf-8')
+        print(f"✅ Saved {len(df)} optimized jobs to {csv_filename}")
+        
+        # Also save a copy as the latest file for easy access
+        latest_filename = 'data/latest_fintech_jobs.csv'
+        df.to_csv(latest_filename, index=False, encoding='utf-8')
+        print(f"✅ Also saved as {latest_filename}")
+        
+        return df, csv_filename
 
     def run_optimized_scraper(self):
         """Main optimized scraper function"""
@@ -289,16 +326,17 @@ class OptimizedFintechScraper:
             print("📝 Creating optimized job listings...")
             self.create_optimized_jobs()
         
-        # Save optimized data
-        df = self.save_optimized_data()
+        # Save optimized data with sequence and timestamp
+        df, csv_filename = self.save_optimized_data()
         
         # Show summary
         print(f"\n✅ Optimized scraping completed!")
         print(f"📊 Found {len(df)} unique job positions")
-        print(f"📄 Generated optimized CSV data")
+        print(f"📄 Generated optimized CSV data: {csv_filename}")
         print(f"🔗 All positions include direct apply links")
         print(f"📧 HR emails included for direct applications")
         print(f"\n💡 Use 'python display_jobs.py' to view formatted table")
+        print(f"📁 Data saved in 'data/' folder with sequence numbering")
 
 if __name__ == "__main__":
     scraper = OptimizedFintechScraper()

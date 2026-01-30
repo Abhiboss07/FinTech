@@ -1,8 +1,9 @@
 # PDF reports
 *.pdf
 
-# CSV data files
+# CSV data files (except in data folder)
 *.csv
+!data/*.csv
 
 # Excel files
 *.xlsx
